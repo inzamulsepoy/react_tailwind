@@ -1,0 +1,20 @@
+/* Tailwind v4 single import */
+@import "tailwindcss";
+
+/* Base tweaks */
+@layer base {
+  html, body, #root { height: 100%; }
+}
+
+/* Your component utilities */
+@layer components {
+  .btn {
+    /* keep to built-in utilities to avoid “unknown utility” */
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2
+           font-medium shadow transition active:scale-95;
+  }
+
+  .btn-primary { @apply bg-gray-900 text-white hover:bg-gray-800; }
+  .btn-ghost   { @apply bg-transparent text-gray-900 hover:bg-gray-100; }
+  .container-p { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8; }
+}
