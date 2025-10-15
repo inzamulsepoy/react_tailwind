@@ -1,147 +1,156 @@
 import React from "react";
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-gray-900">
-      <Navbar />
-
+    <>
       {/* Hero */}
-      <header className="relative isolate">
-        <div className="mx-auto max-w-7xl px-6 pt-16 pb-12 sm:pt-24 sm:pb-16 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl">
-              Build faster, ship better.
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              A sleek starter layout with a reusable Navbar and Footer. Tweak the
-              content, plug in your data, and you’re live.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-4">
-              <a
-                href="#get-started"
-                className="rounded-2xl px-5 py-3 text-base font-semibold shadow-sm ring-1 ring-inset ring-gray-900 hover:bg-gray-900 hover:text-white transition"
-              >
-                Get started
-              </a>
-              <a
-                href="#learn-more"
-                className="rounded-2xl px-5 py-3 text-base font-semibold bg-gray-900 text-white hover:bg-gray-800 transition"
-              >
-                Learn more
-              </a>
-            </div>
-          </div>
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <h1 className="text-4xl font-bold">Build faster, ship better.</h1>
+        <p className="mt-4 text-gray-600 max-w-2xl">
+          This file holds only the page content. The layout (Navbar & Footer) is in App.jsx.
+        </p>
+
+        <div className="mt-8 flex gap-3">
+          <a
+            href="#get-started"
+            className="inline-flex items-center justify-center rounded-xl px-4 py-2 bg-gray-900 text-white hover:bg-gray-800"
+          >
+            Get started
+          </a>
+          <a
+            href="#learn-more"
+            className="inline-flex items-center justify-center rounded-xl px-4 py-2 border hover:bg-gray-50"
+          >
+            Learn more
+          </a>
         </div>
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu blur-3xl"
-          style={{
-            background:
-              "radial-gradient(50% 50% at 50% 50%, rgba(59,130,246,.15), rgba(0,0,0,0))",
-            height: 300,
-          }}
-        />
-      </header>
+      </section>
 
       {/* Features */}
-      <main className="flex-1">
-        <section id="features" className="py-16 sm:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Opinions included, bloat excluded
-              </h2>
-              <p className="mt-4 text-gray-600">
-                Sensible defaults, componentized layout, and a tidy structure you
-                can extend as your app grows.
-              </p>
-            </div>
+      <section id="features" className="mx-auto max-w-6xl px-6 py-16 border-t">
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-semibold">Features</h2>
+          <p className="mt-2 text-gray-600">
+            Opinionated defaults, accessible components, and a layout that scales with you.
+          </p>
+        </div>
 
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  title: "Responsive Navbar",
-                  desc: "Mobile-first menu with keyboard-friendly focus states.",
-                },
-                {
-                  title: "Hero + CTA",
-                  desc: "Clear value prop and actions to drive conversions.",
-                },
-                {
-                  title: "Reusable Footer",
-                  desc: "Links, socials, and legal in one neat place.",
-                },
-                {
-                  title: "Utility-first styling",
-                  desc: "Tailwind-ready classes for rapid iteration.",
-                },
-                {
-                  title: "Accessible by default",
-                  desc: "Semantic HTML, aria labels, and good contrast.",
-                },
-                {
-                  title: "Easy to customize",
-                  desc: "Swap colors, copy, or layout in minutes.",
-                },
-              ].map((f) => (
-                <div
-                  key={f.title}
-                  className="rounded-2xl border border-gray-200 p-6 hover:shadow-sm transition"
-                >
-                  <div className="mb-3">
-                    {/* simple decorative icon */}
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M12 3l2.39 4.84 5.34.78-3.86 3.76.91 5.31L12 15.9l-4.78 2.5.91-5.31L4.27 8.62l5.34-.78L12 3z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold">{f.title}</h3>
-                  <p className="mt-2 text-sm text-gray-600">{f.desc}</p>
-                </div>
-              ))}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              title: "Responsive Navbar",
+              desc: "Mobile-friendly menu with keyboard accessibility.",
+            },
+            {
+              title: "Reusable Sections",
+              desc: "Drop-in sections for hero, features, pricing, and about.",
+            },
+            {
+              title: "Utility-first styling",
+              desc: "Tailwind classes for fast iteration and consistent UI.",
+            },
+          ].map((f) => (
+            <div
+              key={f.title}
+              className="rounded-2xl border p-6 hover:shadow-sm transition"
+            >
+              <h3 className="text-lg font-semibold">{f.title}</h3>
+              <p className="mt-2 text-sm text-gray-600">{f.desc}</p>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* Callout */}
-        <section
-          id="get-started"
-          className="bg-gray-50 border-y border-gray-200 py-14"
-        >
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="flex flex-col items-start gap-6 rounded-2xl p-8 md:flex-row md:items-center md:justify-between">
-              <div>
-                <h3 className="text-2xl font-bold">Ready to launch?</h3>
-                <p className="mt-2 text-gray-600">
-                  Copy these files into your project and tailor them to your brand.
-                </p>
-              </div>
+      {/* Pricing */}
+      <section id="pricing" className="mx-auto max-w-6xl px-6 py-16 border-t">
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-semibold">Pricing</h2>
+          <p className="mt-2 text-gray-600">
+            Simple, transparent plans. Pick what fits—upgrade anytime.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              name: "Starter",
+              price: "$0",
+              perks: ["Basic components", "Email support", "MIT License"],
+              cta: "Get Starter",
+            },
+            {
+              name: "Pro",
+              price: "$19",
+              perks: ["Everything in Starter", "Extra sections", "Priority support"],
+              cta: "Go Pro",
+              highlighted: true,
+            },
+            {
+              name: "Team",
+              price: "$49",
+              perks: ["Everything in Pro", "Team license", "Design tokens"],
+              cta: "Choose Team",
+            },
+          ].map((plan) => (
+            <div
+              key={plan.name}
+              className={`rounded-2xl border p-6 flex flex-col ${
+                plan.highlighted ? "ring-1 ring-gray-900" : ""
+              }`}
+            >
+              <h3 className="text-lg font-semibold">{plan.name}</h3>
+              <div className="mt-2 text-3xl font-bold">{plan.price}</div>
+              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                {plan.perks.map((p) => (
+                  <li key={p} className="flex items-start gap-2">
+                    <span aria-hidden>✓</span>
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
               <a
-                href="#"
-                className="rounded-2xl bg-gray-900 px-5 py-3 text-base font-semibold text-white hover:bg-gray-800 transition"
+                href="#get-started"
+                className="mt-6 inline-flex items-center justify-center rounded-xl px-4 py-2 bg-gray-900 text-white hover:bg-gray-800"
               >
-                View docs
+                {plan.cta}
               </a>
             </div>
-          </div>
-        </section>
-      </main>
+          ))}
+        </div>
+      </section>
 
-      <Footer />
-    </div>
+      {/* About */}
+      <section id="about" className="mx-auto max-w-6xl px-6 py-16 border-t">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div>
+            <h2 className="text-3xl font-semibold">About</h2>
+            <p className="mt-3 text-gray-600">
+              This starter gives you a clean foundation: a responsive Navbar,
+              a reusable Footer, and practical sections to launch quickly.
+              Customize copy, colors, and components to match your brand.
+            </p>
+            <p className="mt-3 text-gray-600">
+              Built with accessibility and performance in mind, so you can focus
+              on your product—without reinventing the layout every time.
+            </p>
+          </div>
+          <div className="rounded-2xl border p-6">
+            <h3 className="text-lg font-semibold">Tech stack</h3>
+            <ul className="mt-3 space-y-2 text-sm text-gray-700">
+              <li>React + Vite</li>
+              <li>Tailwind CSS (v4-ready)</li>
+              <li>Semantic HTML, ARIA-friendly patterns</li>
+            </ul>
+            <a
+              id="get-started"
+              href="#"
+              className="mt-6 inline-flex items-center justify-center rounded-xl px-4 py-2 bg-gray-900 text-white hover:bg-gray-800"
+            >
+              Get started
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
