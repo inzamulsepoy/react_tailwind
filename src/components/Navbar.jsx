@@ -6,10 +6,12 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Added "Contact" link
   const links = [
     { label: "Features", href: "#features" },
     { label: "Pricing", href: "#pricing" },
     { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" }, // 👈 new contact link
   ];
 
   // Scroll to section smoothly
@@ -21,14 +23,14 @@ export default function Navbar() {
   const handleLinkClick = (l) => {
     setOpen(false);
     if (l.href.startsWith("/")) {
-      // Navigate to another route (About)
+      // Navigate to another route (About, Contact, etc.)
       navigate(l.href);
     } else {
       // Internal section
       if (location.pathname !== "/") {
         // If not on home, go to home first
         navigate("/", { replace: false });
-        setTimeout(() => handleScroll(l.href), 100); // small delay to allow DOM render
+        setTimeout(() => handleScroll(l.href), 100); // delay for DOM render
       } else {
         handleScroll(l.href);
       }
@@ -48,7 +50,11 @@ export default function Navbar() {
             <button
               key={l.label}
               onClick={() => handleLinkClick(l)}
-              className="text-sm text-gray-700 hover:text-gray-900 rounded px-3 py-2"
+              className={`text-sm rounded px-3 py-2 ${
+                location.pathname === l.href
+                  ? "text-gray-900 font-semibold"
+                  : "text-gray-700 hover:text-gray-900"
+              }`}
             >
               {l.label}
             </button>
@@ -98,7 +104,11 @@ export default function Navbar() {
               <button
                 key={l.label}
                 onClick={() => handleLinkClick(l)}
-                className="rounded px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                className={`rounded px-3 py-2 text-sm ${
+                  location.pathname === l.href
+                    ? "bg-gray-100 text-gray-900 font-medium"
+                    : "text-gray-700 hover:bg-gray-50"
+                }`}
               >
                 {l.label}
               </button>
